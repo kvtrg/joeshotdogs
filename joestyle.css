@@ -1,0 +1,100 @@
+h1 {
+  font-family:"Akronim", "Rubik", "FredokaOne", sans-serif;
+  font-size:120px;
+  color: #0035a0;
+}
+
+h2 {
+  font-family:"Rubik", "FredokaOne", sans-serif;
+  font-size: 50px;
+  color: #0035a0;
+}
+h3 {
+  font-family: "Rubik", "FredokaOne", sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  color: #0035a0;
+}
+p {
+  font-family: "Rubik", "FredokaOne", sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  color: #0035a0;
+}
+body{
+  background-image: url("tile.jpg");
+  background-size: 5%;
+  background-repeat: 10;
+}
+
+#top {
+  padding: 0% 0% 30% 0%;
+}
+#bottom {
+  padding: 10% 0% 100px 0%;
+}
+
+.menu {
+  border: none;
+  padding: 3% 5% 0px 0%;
+  text-align: center;
+
+
+}
+.menu li {
+  display: inline-block;
+  font-size: 5px;
+  padding: 10% 40% 10% 40%;
+  font-family: "Roboto", "Lora", "Raleway", sans-serif;
+  text-align: left;
+  color: #0035a0;
+}
+body {
+   padding: 5% 10% 5% 10%;
+   text-align: center;
+}
+.summary {
+  border: none;
+  padding: 3% 20% 0px 20%;
+  text-align: center;
+
+}
+.summary li {
+  display: inline-block;
+  font-size: 25px;
+  font-family: "Roboto", "Lora", "Raleway", sans-serif;
+  text-align: left;
+  color: #0035a0;
+
+}
+
+.spread {
+  border: none;
+  padding: 3% 20% 0px 20%;
+  text-align: center;
+
+}
+.spread li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 3% 5% 0px 5%;
+  font-family: "Roboto", "Lora", "Raleway", sans-serif;
+  text-align: left;
+  color: #000;
+}
+input[type=button] {
+    padding:10px 20px;
+    background-color: #ffa133;
+    color: #0035a0;
+    font-size: 25px;
+    border: none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 4px;
+    float: right;
+}
+input[type=button]:hover{
+  visibility:visible;
+  background:#0035a0;
+  color: #fff;
+}

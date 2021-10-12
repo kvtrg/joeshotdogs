@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Joe's Hotdogs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="joestyle.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FredokaOne">
+
+      <style type="type/css">
+
+      </style>
+
+      <script language="javascript">
+
+
+        var h,f,d;
+        var subt=0, discount=0, dissubt=0, tax=0, total=0;
+
+        function getOrder(){
+          h = prompt("How many hotdogs do you want?");
+          f = prompt("How many french fries do you want?");
+          d = prompt("How many soft drinks do you want?");
+        }
+
+        function getCost(){
+          subt = (h*3.75) + (f*1) + (d*1.5);
+          if (subt > 20){
+            discount = subt*10/100;
+            dissubt = subt - discount;
+          }else{
+            dissubt = subt;
+          }
+          tax = dissubt*0.0625;
+          total = dissubt + tax;
+        }
+
+
+
+        window.onload = function() {
+        	document.getElementById("order").onclick= function()
+        	{
+            getOrder();
+            getCost();
+            if(h>0){
+              document.getElementById("hotdog").innerHTML="Hotdog";
+              document.getElementById("num_hotdog").innerHTML="................................................................x "
+              + h;
+              document.getElementById("total_hotdog").innerHTML="$" + (h*3.75).toFixed(2);
+            }
+            if(f>0){
+              document.getElementById("fries").innerHTML="French Fries";
+              document.getElementById("num_fries").innerHTML="................................................................x "
+              + f;
+              document.getElementById("total_fries").innerHTML="$" + (f*1.00).toFixed(2);
+            }
+            if(d>0){
+              document.getElementById("drink").innerHTML="Drink";
+              document.getElementById("num_drink").innerHTML="................................................................x "
+              + d;
+              document.getElementById("total_drink").innerHTML="$" + (d*1.50).toFixed(2);
+            }
+            if (h==0&&f==0&&d==0){
+              alert("Your order is empty, please enter at least one item.");
+              return;
+            }
+            document.getElementById("subt").innerHTML="$" + (subt).toFixed(2);
+            if(discount>0){
+              document.getElementById("discount").innerHTML="$" + parseFloat(discount).toFixed(2);
+            }else{
+              document.getElementById("discount").innerHTML="N/A";
+            }
+
+            document.getElementById("tax").innerHTML="$" + parseFloat(tax).toFixed(2);
+            document.getElementById("total").innerHTML="$" + parseFloat(total).toFixed(2);
+
+        	}
+
+        }
+      </script>
+   </head>
+
+   <body>
+      <h1>JOE'S HOTDOGS</h1>
+
+
+      <div id="top">
+        <ul class="spread">
+          <li style= "float:left; max-width: 40%;">
+            <p><h2>Menu</h2></p>
+            <p><h3 style="font-family:'Akronim', 'Rubik', 'FredokaOne', sans-serif;
+            font-size:40px; text-align:right;">
+              Joe&#x27; s special</h3>
+            <h3>10% discount with orders above $20</h3></p>
+            <p>
+              <ul class="menu">
+                <li style= "float:left; max-width: 20%;">
+                  <p>Hotdog</p>
+                  <p>Fries</p>
+                  <p>Drink</p>
+                </li>
+
+                <li style= "float:center; max-width: 60%;">
+                  <p>............</p>
+                  <p>............</p>
+                  <p>............</p>
+                </li>
+
+                <li style= "float:right; max-width: 20%;">
+                  <p>$3.75</p>
+                  <p>$1.00</p>
+                  <p>$1.50</p>
+                </li>
+              </ul>
+            </p>
+          </li>
+
+          <li style= "float:right; max-width: 40%;">
+            <p><h2>Order Online</h2></p>
+            <p><input type = "button" id="order" value= "Order Now!"></p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="bottom">
+        <h2>Your Order Summary</h2>
+
+
+
+        <ul class="summary">
+          <li style= "float:left; max-width: 20%;">
+            <p><div id="hotdog">&nbsp;</div></p>
+            <p><div id="fries">&nbsp;</div></p>
+            <p><div id="drink">&nbsp;</div></p>
+            <p>&nbsp</p>
+            <p>Subtotal</p>
+            <p>Discount</p>
+            <p>Tax</p>
+            <p>Total</p>
+          </li>
+
+          <li style= "float:center; max-width: 60%;">
+            <p><div id="num_hotdog">&nbsp;</div></p>
+            <p><div id="num_fries">&nbsp;</div></p>
+            <p><div id="num_drink">&nbsp;</div></p>
+            <p>&nbsp</p>
+            <p>.............................................................................</p>
+            <p>.............................................................................</p>
+            <p>.............................................................................</p>
+            <p>.............................................................................</p>
+          </li>
+
+
+          <li style= "float:right; max-width: 20%;">
+            <p><div id="total_hotdog">&nbsp;</div></p>
+            <p><div id="total_fries">&nbsp;</div></p>
+            <p><div id="total_drink">&nbsp;</div></p>
+            <p>&nbsp</p>
+            <p><div id="subt">&nbsp;</div></p>
+            <p><div id="discount">&nbsp;</div></p>
+            <p><div id="tax">&nbsp;</div></p>
+            <p><div id="total">&nbsp;</div></p>
+          </li>
+        </ul>
+      </div>
+
+   </body>
+
+</html>
